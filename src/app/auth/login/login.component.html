@@ -1,0 +1,47 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFill class="login">
+  <form *ngIf="!showOTP" class="container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" [formGroup]="loginForm" (ngSubmit)="onMobileSubmit()">
+
+    
+    <h1>Log In</h1>
+    
+    <div class="form-group">
+      <label for="mobilenumber">Mobile Number<span class="required">*</span></label>
+      <input id="mobilenumber" type="text" placeholder="Mobile Number" formControlName="mobilenumber"
+             [ngClass]="{ 'error': loginForm.controls['mobilenumber'].invalid && (loginForm.controls['mobilenumber'].dirty || loginForm.controls['mobilenumber'].touched) }">
+      <div *ngIf="loginForm.controls['mobilenumber'].invalid && (loginForm.controls['mobilenumber'].dirty || loginForm.controls['mobilenumber'].touched)" class="error-message">
+        <span *ngIf="loginForm.controls['mobilenumber'].errors?.['required']">Mobile number is required</span>
+        <span *ngIf="loginForm.controls['mobilenumber'].errors?.['pattern']">Invalid mobile number format</span>
+      </div>
+      
+     
+    </div>
+    
+    <div *ngIf="errMsg.length > 0" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <span class="error" *ngFor="let msg of errMsg">{{ msg }}</span>
+    </div>
+    
+    <button type="submit" class="submit-btn">Submit</button>
+    
+    <div class="signup-link">
+      Don't have an account? <a routerLink="/signup">Sign up</a>
+    </div>
+  </form>
+
+  <form *ngIf="showOTP" class="container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" [formGroup]="otpForm" (ngSubmit)="onOTPSubmit()">
+  
+    <h1>Enter OTP</h1>
+    
+    <div class="form-group">
+      <label for="OTP">OTP<span class="required">*</span></label>
+      <input id="OTP" type="text" placeholder="OTP" formControlName="OTP"
+             [ngClass]="{ 'error': otpForm.controls['OTP'].invalid && (otpForm.controls['OTP'].dirty || otpForm.controls['OTP'].touched) }">
+      <div *ngIf="otpForm.controls['OTP'].invalid && (otpForm.controls['OTP'].dirty || otpForm.controls['OTP'].touched)" class="error-message">
+        <span *ngIf="otpForm.controls['OTP'].errors?.['required']">OTP is required</span>
+      </div>
+      
+     
+    </div>
+    
+    <button type="submit" class="submit-btn">Verify</button>
+  </form>
+</div>

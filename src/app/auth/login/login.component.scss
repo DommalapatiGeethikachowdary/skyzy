@@ -1,0 +1,129 @@
+.login {
+    background: url('/assets/login.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Padding around the entire login page */
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.5);  // Semi-transparent white background to show the background image
+    border-radius: 16px;
+    padding: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative; /* Needed for positioning the red lines */
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .form-group {
+    width: 100%;
+    position: relative; /* Needed for positioning the red lines */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+  }
+  
+  input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  input.error {
+    border-color: red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    text-align: middle;
+  }
+  
+  .submit-btn {
+    width:  25%;
+    padding: 10px;
+    background-color: #667eea;
+    border: none;
+    border-radius: 4px;
+    color: rgb(243, 233, 233);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #5a67d8;
+  }
+  
+  /* Signup link */
+  .signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .signup-link a {
+    color: #667eea;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Red lines */
+  .red-line-top,
+  .red-line-left,
+  .red-line-right,
+  .red-line-bottom {
+    position: absolute;
+   
+  }
+  
+  .red-line-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+  }
+  
+  .red-line-left {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+  }
+  
+  .red-line-right {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+  }
+  
+  .red-line-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+  }
+  
